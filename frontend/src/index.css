@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  min-height: 100vh;
+  color: #f8fafc;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-card {
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #38bdf8 0%, #d946ef 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Button styles */
+.btn-primary {
+  @apply px-6 py-3 bg-gradient-to-r from-primary-500 to-primary-600 text-white font-semibold rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-primary-500/25 hover:scale-[1.02] active:scale-[0.98];
+}
+
+.btn-secondary {
+  @apply px-6 py-3 bg-white/10 text-white font-semibold rounded-xl border border-white/20 transition-all duration-200 hover:bg-white/20 hover:scale-[1.02] active:scale-[0.98];
+}
+
+.btn-success {
+  @apply px-6 py-3 bg-gradient-to-r from-success-500 to-success-600 text-white font-semibold rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-success-500/25 hover:scale-[1.02] active:scale-[0.98];
+}
+
+.btn-danger {
+  @apply px-6 py-3 bg-gradient-to-r from-danger-500 to-danger-600 text-white font-semibold rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-danger-500/25 hover:scale-[1.02] active:scale-[0.98];
+}
+
+/* Input styles */
+.input-field {
+  @apply w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/40 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 transition-all duration-200;
+}
+
+/* Card styles */
+.card {
+  @apply glass-card p-6 transition-all duration-300 hover:border-white/15;
+}
+
+/* Status badges */
+.badge {
+  @apply px-3 py-1 rounded-full text-xs font-medium;
+}
+
+.badge-success {
+  @apply badge bg-success-500/20 text-success-400 border border-success-500/30;
+}
+
+.badge-warning {
+  @apply badge bg-warning-500/20 text-warning-400 border border-warning-500/30;
+}
+
+.badge-danger {
+  @apply badge bg-danger-500/20 text-danger-400 border border-danger-500/30;
+}
+
+.badge-primary {
+  @apply badge bg-primary-500/20 text-primary-400 border border-primary-500/30;
+}
+
+/* Token number display */
+.token-display {
+  @apply text-6xl md:text-8xl font-bold gradient-text;
+}
+
+/* Queue widget */
+.queue-widget {
+  @apply fixed top-0 left-0 right-0 z-50 glass border-b border-white/10 py-3 px-4;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Loading spinner */
+.spinner {
+  @apply w-6 h-6 border-2 border-white/20 border-t-primary-500 rounded-full animate-spin;
+}
